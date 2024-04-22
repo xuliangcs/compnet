@@ -45,6 +45,7 @@ Recommanded hardware requirement for **training**:
 - CPU Mem $\geq$ 16G (32G is recommended for highspeed data augmentation)
 
 Software development environment:
+- [cuda&cudnn&gpu-driver](https://github.com/xuliangcs/env/blob/main/doc/PyTorch.md)
 - `Anaconda`: [download & install](https://www.anaconda.com/)
 - `PyTorch`: installation command lines are as follows
   ```
