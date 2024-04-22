@@ -18,8 +18,9 @@ class NormSingleROI(object):
 
     def __call__(self, tensor):
 
-        if not T.functional._is_tensor_image(tensor):
-            raise TypeError('tensor is not a torch image.')
+        # old torchvision api:
+        # if not T.functional._is_tensor_image(tensor):
+        #     raise TypeError('tensor is not a torch image.')
 
 
         c,h,w = tensor.size()
