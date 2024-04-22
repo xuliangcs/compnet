@@ -75,16 +75,6 @@ Other tested versions:
 > - scipy: 1.3.1 / 1.10.1
 
 ## 4. PyTorch Implementation
-**Folder Structure**
-```bash
-compnet
-├───CompNet
-│   ├───data
-│   │   └───datasets
-│   ├───models
-│   └───utils
-└───res
-```
 
 **Configurations**
 
