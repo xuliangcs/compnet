@@ -1,0 +1,9 @@
+@article{spl2021compnet,
+author={Liang, Xu and Yang, Jinyang and Lu, Guangming and Zhang, David},
+journal={IEEE Signal Processing Letters},
+title={CompNet: Competitive Neural Network for Palmprint Recognition Using Learnable Gabor Kernels},
+year={2021},
+volume={28},
+number={},
+pages={1739-1743},
+doi={10.1109/LSP.2021.3103475}}

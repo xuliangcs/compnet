@@ -16,7 +16,7 @@ batch_size = 1
 data_loader_test = DataLoader(dataset=testset, batch_size=batch_size, shuffle=False)
 
 
-net = compnet(num_classes=600) # IITD: 460    KTU: 145    Tongji: 600    REST: 358    XJTU: 200
+net = compnet(num_classes=600) # IITD: 460    KTU: 145    Tongji: 600    REST: 358    XJTU: 200  <---------
 
 net.load_state_dict(torch.load('./net_params.pth'))
 

@@ -4,6 +4,7 @@ import numpy as np
 path = '/home/sunny/datasets/XJTU-UP/renamed/iPhone/Flash'
 # path = '/home/sunny/datasets/XJTU-UP/renamed/iPhone/Nature'
 
+
 root = './'
 with open(os.path.join(root, 'train.txt'), 'w') as ofs:
     files = os.listdir(path)

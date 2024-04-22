@@ -3,6 +3,7 @@ import numpy as np
 
 path = '/home/sunny/datasets/REST'
 
+
 root = './'
 with open(os.path.join(root, 'train.txt'), 'w') as ofs:
     files = os.listdir(path)

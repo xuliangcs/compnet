@@ -35,7 +35,6 @@ test_set_file = './data/test.txt'
 
 path_rst = './rst'
 
-python_path = '/home/sunny/local/anaconda3/envs/torch37/bin/python'
 
 # dataset
 trainset = MyDataset(txt=train_set_file, transforms=None, train=True, imside=128, outchannels=1)
@@ -63,7 +62,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print('\ndevice-> ', device, '\n\n')
 
 
-num_classes=600 # IITD: 460    KTU: 145    Tongji: 600    REST: 358    XJTU: 200
+num_classes=600 # IITD: 460    KTU: 145    Tongji: 600    REST: 358    XJTU: 200  <---------
 
 net = compnet(num_classes=num_classes)
 
@@ -191,7 +190,7 @@ print('%s'%(time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())))
 
 # print('\n\n=======')
 # print('testing ...')
-# os.system(python_path+' test.py')
+# os.system('python test.py')
 
 
 # print('%s'%(time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())))

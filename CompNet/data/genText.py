@@ -1,8 +1,8 @@
 import os
 import numpy as np
 
-path1 = '/home/sunny/datasets/TongJi/palmprint/ROI/session1/'
-path2 = '/home/sunny/datasets/TongJi/palmprint/ROI/session2/'
+path1 = '/home/sunny/datasets/Tongji/palmprint/ROI/session1/'
+path2 = '/home/sunny/datasets/Tongji/palmprint/ROI/session2/'
 
 
 root = './'

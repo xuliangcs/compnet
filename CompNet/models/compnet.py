@@ -28,7 +28,7 @@ class GaborConv2d(nn.Module):
         self.stride = stride
         self.padding = padding      
 
-        self.init_ratio = init_ratio 
+        self.init_ratio = init_ratio
 
         self.kernel = 0
 

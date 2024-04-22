@@ -14,6 +14,7 @@ import numpy as np
 from PIL import Image
 
 import matplotlib.pyplot as plt
+plt.switch_backend('agg')
 
 from models import MyDataset
 from models import compnet
@@ -27,7 +28,6 @@ print('\ndevice-> ', device, '\n\n')
 
 path_rst = './rst/veriEER/' 
 path_hard = os.path.join(path_rst, 'rank1_hard')
-python_path = '/home/sunny/local/anaconda3/envs/torch37/bin/python'
 
 
 model_path = './net_params.pth'
@@ -42,7 +42,7 @@ trainset =MyDataset(txt=train_set_file, transforms=None, train=False)
 testset =MyDataset(txt=test_set_file, transforms=None, train=False)
 
 
-batch_size = 32#128
+batch_size = 32#128#8
 
 data_loader_train = DataLoader(dataset=trainset, batch_size=batch_size, shuffle=False)
 data_loader_test = DataLoader(dataset=testset, batch_size=batch_size, shuffle=False)
@@ -61,7 +61,7 @@ if not os.path.exists(path_hard):
     os.makedirs(path_hard)
 
 
-num_classes = 600  # IITD: 460    KTU: 145    Tongji: 600    REST: 358    XJTU: 200
+num_classes = 600  # IITD: 460    KTU: 145    Tongji: 600    REST: 358    XJTU: 200  <---------
 net = compnet(num_classes=num_classes)
 
 # print(net)
@@ -103,7 +103,7 @@ classNumel = len(set(iddb_train))
 num_training_samples = featDB_train.shape[0]
 assert num_training_samples % classNumel == 0
 trainNum = num_training_samples // classNumel
-print('[classNumel, imgs/class]: ', classNumel, trainNum)
+print('Training DB: ', classNumel, 'classes, ', trainNum, 'images per class')
 print('\n')
 
 
@@ -132,11 +132,12 @@ print('featDB_test.shape: ', featDB_test.shape)
 
 
 print('\nfeature extraction done!')
-print('\n\n')
+print('\n')
  
 
-print('start feature matching ...\n')
+print('start feature matching ...')
 
+print('\n\n---------------------')
 print('Verification EER of the test set ...')
 
 # verification EER of the test set
@@ -170,8 +171,8 @@ with open('./rst/veriEER/scores_VeriEER.txt', 'w') as f:
         f.write(score+' '+label+'\n')
 
 
-os.system(python_path + ' ./getGI.py   ./rst/veriEER/scores_VeriEER.txt scores_VeriEER')
-os.system(python_path + ' ./getEER.py  ./rst/veriEER/scores_VeriEER.txt scores_VeriEER')  
+os.system('python ./getGI.py   ./rst/veriEER/scores_VeriEER.txt scores_VeriEER')
+os.system('python ./getEER.py  ./rst/veriEER/scores_VeriEER.txt scores_VeriEER')  
 
 
 
@@ -215,7 +216,7 @@ with open('./rst/veriEER/rank1.txt', 'w') as f:
        
 
 
-print('\nAggregated verification EER of the test set...')
+print('\n\nAggregated verification EER of the test set...')
 
 
 s = np.array(s)
@@ -228,12 +229,12 @@ with open('./rst/veriEER/scores_VeriEER_aggr.txt', 'w') as f:
             f.write(score+' '+label+'\n')
 
 
-os.system(python_path+ ' ./getGI.py   ./rst/veriEER/scores_VeriEER_aggr.txt scores_VeriEER_aggr')
-os.system(python_path+ ' ./getEER.py  ./rst/veriEER/scores_VeriEER_aggr.txt scores_VeriEER_aggr')    
+os.system('python ./getGI.py   ./rst/veriEER/scores_VeriEER_aggr.txt scores_VeriEER_aggr')
+os.system('python ./getEER.py  ./rst/veriEER/scores_VeriEER_aggr.txt scores_VeriEER_aggr')    
 
 
-
-print('\n\nEER of the test set...')
+print('\n\n---------------------')
+print('EER of the test set...')
 # dataset EER of the test set (the gallery set is not used)
 s = [] # matching score
 l = [] # genuine / impostor matching
@@ -261,5 +262,5 @@ with open('./rst/veriEER/scores_EER_test.txt', 'w') as f:
         label = str(l[i])
         f.write(score+' '+label+'\n')
 
-os.system(python_path+ ' ./getGI.py   ./rst/veriEER/scores_EER_test.txt scores_EER_test')
-os.system(python_path+ ' ./getEER.py  ./rst/veriEER/scores_EER_test.txt scores_EER_test')  
+os.system('python ./getGI.py   ./rst/veriEER/scores_EER_test.txt scores_EER_test')
+os.system('python ./getEER.py  ./rst/veriEER/scores_EER_test.txt scores_EER_test')
