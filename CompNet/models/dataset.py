@@ -25,7 +25,7 @@ class NormSingleROI(object):
 
         c,h,w = tensor.size()
    
-        if c is not 1:
+        if c != 1:
             raise TypeError('only support graysclae image.')
 
         # print(tensor.size)
