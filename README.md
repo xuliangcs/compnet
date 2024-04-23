@@ -175,13 +175,15 @@ pages={1739-1743},
 doi={10.1109/LSP.2021.3103475}}
 ```
 
-X. Liang, J. Yang, G. Lu and D. Zhang, "CompNet: Competitive Neural Network for Palmprint Recognition Using Learnable Gabor Kernels," in IEEE Signal Processing Letters, vol. 28, pp. 1739-1743, 2021, doi: 10.1109/LSP.2021.3103475.
+Xu Liang, Jinyang Yang, Guangming Lu and David Zhang, "CompNet: Competitive Neural Network for Palmprint Recognition Using Learnable Gabor Kernels," in IEEE Signal Processing Letters, vol. 28, pp. 1739-1743, 2021, doi: 10.1109/LSP.2021.3103475.
 
+### License
+
+This project is under the CC-BY-NC 4.0 license. See [LICENSE](LICENSE) for details.
 
 ## Acknowledgement
 
 Portions of the research use the REST'2016 Database collected by the Research Groups in Intelligent Machines, University of Sfax, Tunisia. We would also like to thank the organizers (IITD, Tongji, REgim, XJTU, and NTU) for allowing us to use their datasets. 
-
 
 
 ## References
