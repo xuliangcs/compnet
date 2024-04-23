@@ -40,7 +40,7 @@ Fig. 2.4 **CB17x17_Conv2** feature maps obtained at different epochs
 # 3. Requirements
 ![](https://img.shields.io/badge/Ubuntu-tested-green) ![](https://img.shields.io/badge/Windows11-tested-green) 
 
-Recommanded hardware requirement for **training**:
+Recommanded hardware requirement **for training**:
 - GPU Mem $\gt$ 6G
 - CPU Mem $\geq$ 16G (32G is recommended for highspeed data augmentation)
 
@@ -95,7 +95,7 @@ cd path/to/CompNet/
 #in the CompNet folder:
 
 #prepare data
-cp ./data/datasets/genText_xxx.py ./data/genText.py
+cp ./data/for_reference/genText_xxx.py ./data/genText.py
 #where xxx is the dataset name, e.g., tongji =>genText_tongji.py
 Modify the DB path variable in ./data/genText.py
 #the sample naming format should be consistent with the script's requirements
