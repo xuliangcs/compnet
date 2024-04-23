@@ -46,7 +46,7 @@ Recommanded hardware requirement for **training**:
 
 Software development environment:
 - [cuda&cudnn&gpu-driver](https://github.com/xuliangcs/env/blob/main/doc/PyTorch.md)
-- `Anaconda`: [download & install](https://www.anaconda.com/)
+- `Anaconda`: [download & install](https://www.anaconda.com/download/success)
 - `PyTorch`: installation command lines are as follows
   ```
   conda create -n compnet python=3.8 
