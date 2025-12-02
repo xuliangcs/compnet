@@ -131,7 +131,6 @@ torch.load('net_params.pth', map_location='cpu')
 ```
 
 
-
 ## 5. Framework
 
 ```shell
