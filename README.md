@@ -75,8 +75,7 @@ Other tested versions:
 > - scikit-learn: 0.21.3 / 1.0.2
 > - scipy: 1.3.1 / 1.10.1
 
-Tips: 
-If a particular version is no longer available for download, you can try replacing it with a newer version. However, running the code may encounter compatibility issues, such as deprecated functions or changes in default parameters. Please search for solutions based on the error messages and the actual intent of the code.
+Tips: If a particular version is no longer available for download, you can try replacing it with a newer version. However, running the code may encounter compatibility issues, such as deprecated functions or changes in default parameters. Please search for solutions based on the error messages and the actual intent of the code.
 
 
 ## 4. PyTorch Implementation
