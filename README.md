@@ -15,7 +15,7 @@ CompNet: Competitive Neural Network for Palmprint Recognition Using Learnable Ga
 - Pretrained Models: [google](https://drive.google.com/drive/folders/1TuqQVI0T9pBVr2jQKLY40jbZ8ZMQLfie?usp=sharing) or [baidu](https://pan.baidu.com/s/1BEOylWlj1MlPb5pfw57fKw?pwd=dl4m)
 
 - Publicly Available Datasets: [Tongji](https://cslinzhang.github.io/ContactlessPalm), [IITD](https://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm), [REST](https://ieee-dataport.org/open-access/rest-database), [NTU](https://github.com/BFLTeam/NTU_Dataset), [XJTU-UP](https://gr.xjtu.edu.cn/en/web/bell)
- 
+
 ## 2. Visualizations
 ![](./res/05_cb2_gabor.gif)
 
