@@ -139,7 +139,7 @@ torch.load('net_params.pth', map_location='cpu')
     - or other datasets with complex directory structures, preprocessing can be applied to simplify organization, such as renaming files and placing them into a single folder. In such cases, the `userID` parsing logic in `genText.py` must align with the new filename and directory conventions.
     - The recommended renaming format is: `xxxx_yyyy.zzz`
         - `xxxx` denotes the `userID`, representing a unique palm.
-        - `yyyy` denotes the sampleID, representing an individual capture of that palm.
+        - `yyyy` denotes the `sampleID`, representing an individual capture of that palm.
         - IDs with fewer than four digits are zero-padded on the left.
         - zzz is the image file extension (e.g., bmp, jpg, tiff,etc.).
         - Example: 0010_0003.bmp represents the 3rd sample of palm #10.
