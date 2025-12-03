@@ -90,23 +90,6 @@ Tips: If a particular version is no longer available for download, you can try r
 2. modify `num_classes` in `train.py`, `test.py`, and `inference.py`
     - Tongji: 600, IITD: 460, REST: 358, XJTU-UP: 200, KTU: 145
 
-**Dataset preparation**
-1. The genText.py script is responsible for traversing images in the dataset folder and parsing class labels (starting from 0) based on each filename's format.  
-    - For each sample, the full path (including the filename) and its corresponding class label (separated by a space) are saved as a single line in either the train.txt or test.txt file.  
-    - In our experiments, each individual palm represents a unique class.
-2. The method used to extract userID and sampleID from image filenames is implemented within the script, handling two main scenarios:
-    - For the original Tongji dataset, image filenames range sequentially from 00001.bmp to 06000.bmp. Every consecutive group of 10 samples originates from the same palm. Therefore, in genText.py, the userID (class label) is derived by integer division of the numeric filename by 10 (i.e., filename // 10).  
-    - or other datasets with complex directory structures, preprocessing can be applied to simplify organization,  such as renaming files and placing them into a single folder. In such cases, the userID parsing logic in genText.py must align with the new filename and directory conventions.  
-    - The recommended renaming format is: xxxx_yyyy.zzz
-        - xxxx denotes the userID, representing a unique palm.
-        - yyyy denotes the sampleID, representing an individual capture of that palm.
-        - IDs with fewer than four digits are zero-padded on the left.
-        - zzz is the image file extension (e.g., bmp, jpg, tiff,etc.).
-        - Example: 0010_0003.bmp represents the 3rd sample of palm #10.
-
-Sample output of `genText.py`:
-test.txt:
-
 **Commands**
 
 ```shell
@@ -118,6 +101,7 @@ cp ./data/for_reference/genText_xxx.py ./data/genText.py
 #where xxx is the dataset name, e.g., tongji =>genText_tongji.py
 Modify the DB path variable in ./data/genText.py
 #the sample naming format should be consistent with the script's requirements
+#more details can be found in the following Dataset preparation section
 
 #generate the training and testing data sets
 python ./data/genText.py
@@ -146,6 +130,49 @@ The `.pth` file will be generated at the current folder, and all the other resul
 torch.load('net_params.pth', map_location='cpu')
 ```
 
+**Dataset preparation**
+1. The genText.py script is responsible for traversing images in the dataset folder and parsing class labels (starting from 0) based on each filename's format.  
+    - For each sample, the full path (including the filename) and its corresponding class label (separated by a space) are saved as a single line in either the train.txt or test.txt file.  
+    - In our experiments, each individual palm represents a unique class.
+2. The method used to extract userID and sampleID from image filenames is implemented within the script, handling two main scenarios:
+    - For the original Tongji dataset, image filenames range sequentially from 00001.bmp to 06000.bmp. Every consecutive group of 10 samples originates from the same palm. Therefore, in genText.py, the userID (class label) is derived by integer division of the numeric filename by 10 (i.e., filename // 10).  
+    - or other datasets with complex directory structures, preprocessing can be applied to simplify organization, such as renaming files and placing them into a single folder. In such cases, the userID parsing logic in genText.py must align with the new filename and directory conventions.  
+    - The recommended renaming format is: xxxx_yyyy.zzz
+        - xxxx denotes the userID, representing a unique palm.
+        - yyyy denotes the sampleID, representing an individual capture of that palm.
+        - IDs with fewer than four digits are zero-padded on the left.
+        - zzz is the image file extension (e.g., bmp, jpg, tiff,etc.).
+        - Example: 0010_0003.bmp represents the 3rd sample of palm #10.
+
+Sample output of `genText.py`:
+test.txt:
+```shell
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00001.bmp 0
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00002.bmp 0
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00003.bmp 0
+...
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00008.bmp 0
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00009.bmp 0
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00010.bmp 0
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00011.bmp 1
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00012.bmp 1
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00013.bmp 1
+...
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00018.bmp 1
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00019.bmp 1
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00020.bmp 1
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00021.bmp 2
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00022.bmp 2
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00023.bmp 2
+...
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/05991.bmp 599
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/05992.bmp 599
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/05993.bmp 599
+...
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/05998.bmp 599
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/05999.bmp 599
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/06000.bmp 599
+```
 
 ## 5. Framework
 
