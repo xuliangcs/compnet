@@ -131,12 +131,12 @@ torch.load('net_params.pth', map_location='cpu')
 ```
 
 **Dataset preparation**
-1. The genText.py script is responsible for traversing images in the dataset folder and parsing class labels (starting from 0) based on each filename's format.  
-    - For each sample, the full path (including the filename) and its corresponding class label (separated by a space) are saved as a single line in either the train.txt or test.txt file.  
+1. The genText.py script is responsible for traversing images in the dataset folder and parsing class labels (starting from 0) based on each filename's format.
+    - For each sample, the full path (including the filename) and its corresponding class label (separated by a space) are saved as a single line in either the train.txt or test.txt file.
     - In our experiments, each individual palm represents a unique class.
 2. The method used to extract userID and sampleID from image filenames is implemented within the script, handling two main scenarios:
-    - For the original Tongji dataset, image filenames range sequentially from 00001.bmp to 06000.bmp. Every consecutive group of 10 samples originates from the same palm. Therefore, in genText.py, the userID (class label) is derived by integer division of the numeric filename by 10 (i.e., filename // 10).  
-    - or other datasets with complex directory structures, preprocessing can be applied to simplify organization, such as renaming files and placing them into a single folder. In such cases, the userID parsing logic in genText.py must align with the new filename and directory conventions.  
+    - For the original Tongji dataset, image filenames range sequentially from 00001.bmp to 06000.bmp. Every consecutive group of 10 samples originates from the same palm. Therefore, in genText.py, the userID (class label) is derived by integer division of the numeric filename by 10 (i.e., filename // 10).
+    - or other datasets with complex directory structures, preprocessing can be applied to simplify organization, such as renaming files and placing them into a single folder. In such cases, the userID parsing logic in genText.py must align with the new filename and directory conventions.
     - The recommended renaming format is: xxxx_yyyy.zzz
         - xxxx denotes the userID, representing a unique palm.
         - yyyy denotes the sampleID, representing an individual capture of that palm.
@@ -172,6 +172,22 @@ test.txt:
 /home/sunny/datasets/Tongji/palmprint/ROI/session2/05998.bmp 599
 /home/sunny/datasets/Tongji/palmprint/ROI/session2/05999.bmp 599
 /home/sunny/datasets/Tongji/palmprint/ROI/session2/06000.bmp 599
+```
+test.txt (IITD):
+```shell
+/home/sunny/datasets/IITD/roi/0001_0001.bmp 0
+/home/sunny/datasets/IITD/roi/0001_0002.bmp 0
+/home/sunny/datasets/IITD/roi/0001_0003.bmp 0
+/home/sunny/datasets/IITD/roi/0002_0001.bmp 1
+/home/sunny/datasets/IITD/roi/0002_0002.bmp 1
+/home/sunny/datasets/IITD/roi/0002_0003.bmp 1
+/home/sunny/datasets/IITD/roi/0003_0001.bmp 2
+/home/sunny/datasets/IITD/roi/0003_0002.bmp 2
+/home/sunny/datasets/IITD/roi/0003_0003.bmp 2
+/home/sunny/datasets/IITD/roi/0004_0001.bmp 3
+/home/sunny/datasets/IITD/roi/0004_0002.bmp 3
+/home/sunny/datasets/IITD/roi/0004_0003.bmp 3
+...
 ```
 
 ## 5. Framework
