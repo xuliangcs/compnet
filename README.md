@@ -100,9 +100,9 @@ Tips: If a particular version is no longer available for download, you can try r
     - The recommended renaming format is: xxxx_yyyy.zzz  
         - xxxx denotes the userID, representing a unique palm.  
         - yyyy denotes the sampleID, representing an individual capture of that palm.  
+        - IDs with fewer than four digits are zero-padded on the left.  
 
 
-        
 **Commands**
 
 ```shell
