@@ -138,7 +138,7 @@ torch.load('net_params.pth', map_location='cpu')
     - For the **original** Tongji dataset, image filenames range sequentially from `00001.bmp` to `06000.bmp`. Every consecutive group of 10 samples originates from the same palm. Therefore, in `genText.py`, the `userID` (class label) is derived by integer division of the numeric filename by 10 (i.e., filename // 10).
     - or other datasets with complex directory structures, preprocessing can be applied to simplify organization, such as renaming files and placing them into a single folder. In such cases, the `userID` parsing logic in `genText.py` must align with the new filename and directory conventions.
     - The recommended renaming format is: `xxxx_yyyy.zzz`
-        - xxxx denotes the userID, representing a unique palm.
+        - `xxxx` denotes the userID, representing a unique palm.
         - yyyy denotes the sampleID, representing an individual capture of that palm.
         - IDs with fewer than four digits are zero-padded on the left.
         - zzz is the image file extension (e.g., bmp, jpg, tiff,etc.).
