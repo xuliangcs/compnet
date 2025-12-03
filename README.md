@@ -132,7 +132,7 @@ torch.load('net_params.pth', map_location='cpu')
 
 **Dataset preparation**
 1. The `genText.py` script is responsible for traversing images in the dataset folder and parsing class labels (starting from 0) based on each filename's format.
-    - For each sample, the full path (including the filename) and its corresponding class label (separated by a space) are saved as a single line in either the train.txt or test.txt file.
+    - For each sample, the full path (including the filename) and its corresponding class label (separated by a space) are saved as a single line in either the `train.txt` or test.txt file.
     - In our experiments, each individual palm represents a unique class.
 2. The method used to extract userID and sampleID from image filenames is implemented within the script, handling two main scenarios:
     - For the original Tongji dataset, image filenames range sequentially from 00001.bmp to 06000.bmp. Every consecutive group of 10 samples originates from the same palm. Therefore, in genText.py, the userID (class label) is derived by integer division of the numeric filename by 10 (i.e., filename // 10).
