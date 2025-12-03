@@ -101,7 +101,7 @@ Tips: If a particular version is no longer available for download, you can try r
         - xxxx denotes the userID, representing a unique palm.  
         - yyyy denotes the sampleID, representing an individual capture of that palm.  
         - IDs with fewer than four digits are zero-padded on the left.  
-
+        - zzz is the image file extension (e.g., bmp, jpg, tiff,etc.).  
 
 **Commands**
 
