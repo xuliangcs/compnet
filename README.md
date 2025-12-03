@@ -91,7 +91,7 @@ Tips: If a particular version is no longer available for download, you can try r
     - Tongji: 600, IITD: 460, REST: 358, XJTU-UP: 200, KTU: 145
 
 **Dataset preparation**
-
+1. The genText.py script is responsible for traversing images in the dataset folder and parsing class labels (starting from 0) based on each filename's format.  
 
 **Commands**
 
