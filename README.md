@@ -104,6 +104,9 @@ Tips: If a particular version is no longer available for download, you can try r
         - zzz is the image file extension (e.g., bmp, jpg, tiff,etc.).
         - Example: 0010_0003.bmp represents the 3rd sample of palm #10.
 
+Sample output of `genText.py`:
+test.txt:
+
 **Commands**
 
 ```shell
