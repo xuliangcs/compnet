@@ -99,6 +99,9 @@ Tips: If a particular version is no longer available for download, you can try r
     - or other datasets with complex directory structures, preprocessing can be applied to simplify organization,  such as renaming files and placing them into a single folder. In such cases, the userID parsing logic in genText.py must align with the new filename and directory conventions.  
     - The recommended renaming format is: xxxx_yyyy.zzz  
         - xxxx denotes the userID, representing a unique palm.  
+        - yyyy denotes the sampleID, representing an individual capture of that palm.  
+
+
         
 **Commands**
 
