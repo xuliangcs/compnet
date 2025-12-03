@@ -93,7 +93,8 @@ Tips: If a particular version is no longer available for download, you can try r
 **Dataset preparation**
 1. The genText.py script is responsible for traversing images in the dataset folder and parsing class labels (starting from 0) based on each filename's format.  
     - For each sample, the full path (including the filename) and its corresponding class label (separated by a space) are saved as a single line in either the train.txt or test.txt file.  
-
+    - In our experiments, each individual palm represents a unique class.
+    
 **Commands**
 
 ```shell
