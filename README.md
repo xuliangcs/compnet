@@ -142,7 +142,7 @@ torch.load('net_params.pth', map_location='cpu')
         - `yyyy` denotes the `sampleID`, representing an individual capture of that palm.
         - `IDs` with fewer than four digits are zero-padded on the left.
         - `zzz` is the image file extension (e.g., bmp, jpg, tiff,etc.).
-        - Example: 0010_0003.bmp represents the 3rd sample of palm #10.
+        - Example: `0010_0003.bmp` represents the 3rd sample of palm #10.
 
 Sample output of `genText.py`:
 test.txt:
