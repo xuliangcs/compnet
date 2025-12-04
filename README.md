@@ -262,3 +262,6 @@ Portions of the research use the REST'2016 Database collected by the Research Gr
 [6] X. Liang, Z. Li, D. Fan, B. Zhang, G. Lu and D. Zhang, "Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment," in IEEE Transactions on Systems, Man, and Cybernetics: Systems, vol. 52, no. 10, pp. 6464-6476, Oct. 2022, [doi](https://ieeexplore.ieee.org/document/9707646): 10.1109/TSMC.2022.3146777. (`Bimodal alignment`) [ppnet](https://github.com/xuliangcs/ppnet)🖐️
 
 [7] PyTorch API Documents: https://pytorch.org/docs/stable/index.html
+
+![](./res/vis.png)
+Gabor kernels learned by the proposed CompNet and typical feature maps generated at different stages of an image from the Tongji dataset.
